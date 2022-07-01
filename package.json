@@ -1,6 +1,6 @@
 {
     "name": "filepond-plugin-file-validate-duration",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "description": "File Duration Validation Plugin for FilePond",
     "license": "MIT",
     "author": {
