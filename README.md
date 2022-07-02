@@ -1,4 +1,8 @@
-# filepond-plugin-file-validate-duration
+# FilePond Plugin File Validate Duration
+
+LiveDemo:
+
+[<img src="https://img.shields.io/badge/Codesandbox-040404?style=for-the-badge&logo=codesandbox&logoColor=DBDBDB">](https://codesandbox.io/s/filepond-plugin-file-validate-duration-3gnegs)
 
 Filepond plugin to validate media files duration. 
 Inspired by `filepond-plugin-file-validate-size`.
