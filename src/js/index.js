@@ -11,7 +11,7 @@ const ERROR_TYPES = {
 
 const plugin = ({ addFilter, utils }) => {
     // get quick reference to Type utils
-    const { Type, replaceInString } = utils;
+    const { Type, replaceInString, isFile } = utils;
 
     const validateFile = (file, { minDuration, maxDuration } = {}) => {
         return new Promise((resolve, reject) => {
@@ -51,7 +51,8 @@ const plugin = ({ addFilter, utils }) => {
 
     // filtering if an item is allowed in hopper
     addFilter('ALLOW_HOPPER_ITEM', (file, { query }) => {
-        if (!query('GET_ALLOW_FILE_DURATION_VALIDATION')) {
+        // strings are also ignored
+        if (!isFile(file) || !query('GET_ALLOW_FILE_DURATION_VALIDATION')) {
             return true;
         }
 
@@ -80,7 +81,8 @@ const plugin = ({ addFilter, utils }) => {
         'LOAD_FILE',
         (file, { query }) => {
             return new Promise((resolve, reject) => {
-                if (!query('GET_ALLOW_FILE_DURATION_VALIDATION')) {
+                // strings are also ignored
+                if (!isFile(file) || !query('GET_ALLOW_FILE_DURATION_VALIDATION')) {
                     return resolve(file);
                 }
 
